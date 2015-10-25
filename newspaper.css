@@ -284,11 +284,20 @@ img.lastad {
 @media screen and (max-width: 980px) {
     .wrapper {
         width: 100%;
+        padding: 0;
+    }
+    header h3.ticker {
+        font-size: 16px;
+        margin: 0;
     }
     header header h1.title {
         clear: both;
-        font-size: 80px;
+        font-size: 40px;
         text-align: center;
+    }
+    h1.headline {
+        font-size: 34px;
+        margin: 0 0 0 0;
     }
     div.teasers {
         width: 98%;
@@ -298,10 +307,17 @@ img.lastad {
         display: none;
     }
     .columns2 {
-        width: 66%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid black;
     }
-    .ccolumns1 {
-        width: 30%;
+    .columns1.last {
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+    article.cols4 {
+        -webkit-column-count: 1;
     }
 }
 
