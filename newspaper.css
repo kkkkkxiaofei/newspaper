@@ -38,8 +38,9 @@ h2.subhead {
     background: rgb(247, 246, 240);
     position: relative;
     margin: 0 auto;
-    width: 1400px;
     padding: 5px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 header {} div.break {
     clear: both;
@@ -283,7 +284,7 @@ img.lastad {
 
 @media screen and (max-width: 980px) {
     .wrapper {
-        width: 100%;
+        /*width: 100%;*/
         padding: 0;
     }
     header h3.ticker {
