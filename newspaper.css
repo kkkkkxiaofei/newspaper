@@ -1,6 +1,9 @@
 body {
     background: rgb(214, 187, 161);
 }
+body a {
+    text-decoration: none;
+}
 h1,
 h2,
 h3 {
