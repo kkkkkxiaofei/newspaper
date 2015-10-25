@@ -36,7 +36,7 @@ h2.subhead {
     position: relative;
     margin: 0 auto;
     width: 1400px;
-    padding: 10px 30px;
+    padding: 10px 10px;
 }
 header {} div.break {
     clear: both;
@@ -151,7 +151,7 @@ header header h1.title span {
     color: #98BCDB;
     margin-right: -0.2em;
 }
-header header h2.website {
+.website {
     margin: -35px 0 48px 0;
     color: #98BCDB;
 }
@@ -201,7 +201,7 @@ div.student.teasers figure.background img {
     float: left;
     display: block;
     margin: 7px 0 0 0;
-    width: 155px;
+    width: 210px;
     font-family: georgia, serif;
 }
 .published p {
