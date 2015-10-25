@@ -39,7 +39,7 @@ h2.subhead {
     position: relative;
     margin: 0 auto;
     width: 1400px;
-    padding: 10px 10px;
+    padding: 5px;
 }
 header {} div.break {
     clear: both;
@@ -278,3 +278,31 @@ img.lastad {
     width: 197px;
     margin-left: 32px;
 }
+
+/* responsive */
+
+@media screen and (max-width: 980px) {
+    .wrapper {
+        width: 100%;
+    }
+    header header h1.title {
+        clear: both;
+        font-size: 80px;
+        text-align: center;
+    }
+    div.teasers {
+        width: 98%;
+        margin: 5px 1% 5px 1%;
+    }
+    .columns2.van-dyck {
+        display: none;
+    }
+    .columns2 {
+        width: 66%;
+    }
+    .ccolumns1 {
+        width: 30%;
+    }
+}
+
+
