@@ -12,7 +12,7 @@
             <div class="published">
                <time>Tuesday 26.11.13</time>
                <p>Published in Xi'an <a href="https://github.com/kkkkkxiaofei" class="website">by pursue</a></p>
-               <p><strong>￥1.50</strong></p>
+               <p data-bind=""><strong>￥1.50</strong></p>
             </div>
             <header>
                <h1 class="title"><span>每日</span>资讯大搜罗</h1>
@@ -69,12 +69,22 @@
          <div class="break"></div>
          <div class="foot">
             <h1 class="headline">每日资讯Top50</h1>
-            <article class="cols4 columns4">
-               <p>some link here</p>
-            </article>
+            <div class="photo-box">
+               <div class="us-photo">
+                  <!-- ko foreach: XLWB -->
+                  <div class="news-description">
+                     <a data-bind="text: title, attr: { href: url }"></a>
+                  </div>
+                  <img data-bind="attr: { src: thumb }">
+                  <!-- /ko -->
+               </div>
+            </div>
          </div>
-         <img src="" class="lastad">
          <div class="break"></div>
       </div>
    </body>
+   <script type="text/javascript" src="script/jquery-1.9.0.js"></script>
+   <script type="text/javascript" src="script/underscore.js"></script>
+   <script type="text/javascript" src="script/knockout-3.3.0.js"></script>
+   <script type="text/javascript" src="script/index.js"></script>
 </html>

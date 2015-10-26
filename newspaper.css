@@ -72,6 +72,15 @@ article.cols2 {
     
     column-count: 2;
 }
+article.cols3 {
+    -moz-column-count: 2;
+    /* Firefox */
+    
+    -webkit-column-count: 2;
+    /* Safari and Chrome */
+    
+    column-count: 2;
+}
 .byline {
     border-bottom: 1px solid;
     border-top: 1px solid;
@@ -320,6 +329,32 @@ img.lastad {
     article.cols4 {
         -webkit-column-count: 1;
     }
+    .photo-box .us-photo {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
 }
 
+/* self */
+.photo-box .photo-cell {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.us-photo img { 
+    width: 100% !important;
+    height: auto !important;
+    vertical-align: middle;
+}
+
+.us-photo {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 3px;
+    -moz-column-count: 3;
+    -moz-column-gap: 3px;
+    column-count: 3;
+    column-gap: 3px;
+}
 
