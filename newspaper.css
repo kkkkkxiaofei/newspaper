@@ -358,3 +358,12 @@ img.lastad {
     column-gap: 3px;
 }
 
+.weather {
+    float: right;
+    display: block;
+    margin: 7px 10px 0 0;
+    font-family: georgia, serif;
+}
+.weather span {
+    margin: 4px 4px 10px 0;
+}

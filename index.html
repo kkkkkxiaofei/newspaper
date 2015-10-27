@@ -14,6 +14,16 @@
                <p>Published in Xi'an <a href="https://github.com/kkkkkxiaofei" class="website">by pursue</a></p>
                <p data-bind=""><strong>￥1.50</strong></p>
             </div>
+            <div class="weather" data-bind="with: XL_WEATHER">
+               <div>
+                  <span data-bind="text: location"></span>:<span data-bind="text: dayWeatherTemperature + nightWeatherTemperature"></span>度
+               </div>
+               <div>
+                  <span data-bind="text: dayWeatherType + nightWeatherType"></span>|
+                  <span data-bind="text: dayWindPower + nightWindPower"></span>|
+                  <span data-bind="text: dayWindType + nightWindType"></span>
+               </div>
+            </div>
             <header>
                <h1 class="title"><span>每日</span>资讯大搜罗</h1>
             </header>
