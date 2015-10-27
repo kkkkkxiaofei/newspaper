@@ -30,22 +30,17 @@
          </header>
          <div class="break"></div>
          <div class="teaser-block">
+            <!-- ko foreach: JRTT -->
             <div class="student teasers">
-               <h1>World's most influential teenager?</h1>
-               <h2>Exeter student on fame and the web</h2>
-               <figure class="background"><img src=""></figure>
+               <h1 data-bind="text: title"></h1>
+               <div class="background">
+                  <a data-bind="attr : { href: display_url }">
+                     <img data-bind="attr: { src: middle_image || image_url }">
+                  </a>
+               </div>
+               <p data-bind="text: abstract"></p>
             </div>
-            <div class="pop teasers">
-               <h1>40 great facts about 1,000 No 1s</h1>
-               <h2>Peter Robinson's pop trivia special</h2>
-               <figure><img src=""></figure>
-            </div>
-            <div class="borgen teasers">
-               <h1>Life after borgen</h1>
-               <h2>Brigette Sørenson interview</h2>
-               <figure><img src=""></figure>
-               <figure class="background"><img src=""></figure>
-            </div>
+            <!-- /ko -->
             <div class="break"></div>
          </div>
          <div class="columns2">
@@ -57,7 +52,6 @@
                <div class="cont">Continued on page 2 &gt;&gt; </div>
             </article>
          </div>
-         <!-- ends cols2 -->
          <div class="columns2 van-dyck">
             <h2><span>Save for the nation </span>Van Dyck appeal</h2>
             <figure>

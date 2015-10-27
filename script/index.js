@@ -1,7 +1,8 @@
 (function() {
 	var viewModel = {
 		XLWB: ko.observableArray(),
-		XL_WEATHER: ko.observable()
+		XL_WEATHER: ko.observable(),
+		JRTT: ko.observableArray()
 	}
 	var map = {
 		'XLWB': { 
@@ -19,7 +20,6 @@
 		'XL_WEATHER': { 
 			url: 'http://open.weather.sina.com.cn/api/weather/sinaForecast?length=1&air=1&city=%E8%A5%BF%E5%AE%89&callback=?',
 			callback: function(response) {
-				console.log(response);
 				viewModel.XL_WEATHER({
 					location: response.result.data.info.name,
 					dayWeatherTemperature: response.result.data.days.day[0].day_temperature,
@@ -33,29 +33,46 @@
 				});
 			}
 		},
-		'JRTT': 'http://i.snssdk.com/2/article/hot_comments/?callback=jQuery11110026725587202236056_1445440133029&_=1445440133030',
-		'JRTT1': 'http://i.snssdk.com/2/article/hot_comments/?callback=?',
+		'JRTT': {
+			url: 'http://toutiao.com/api/article/recent/?source=2&count=20&category=__all__&max_behot_time=1445956489.33&utm_source=toutiao&offset=0&_=1445956489505',
+			callback: function(response) {
+				var topics = response.data;
+				var topicsWithImage = _.filter(topics, function(t){
+					return t.middle_image && t.image_url && t.abstract;
 
+				});
+				viewModel.JRTT(topicsWithImage.sort(function(a, b) {
+					return parseInt(b.digg_count) - parseInt(a.digg_count);
+				}));
+			}
+		}
 	}
 
 	function _callJSONP(map) {
-		// $.ajax({
-		//   	dataType: "jsonp",
-		//   	url: url ,
-		// }).done(function (data) {
-		// 	console.log(data);
-		// });
-
-		$.getJSON(map.url, {
-			tags: "mount rainier",
-			tagmode: "any",
-			format: "json"
-		}).done(function(data) {
+		$.ajax({
+		  	dataType: "jsonp",
+		  	url: map.url ,
+		}).done(function (data) {
 			map.callback(data);
+		});
+
+		// $.getJSON(map.url, {
+		// 	tags: "mount rainier",
+		// 	tagmode: "any",
+		// 	format: "json"
+		// }).done(function(data) {
+		// 	map.callback(data);
+		// });
+	}
+
+	function grip() {
+		var keys = Object.keys(map);
+		_.each(keys, function(key) {
+			_callJSONP(map[key]);
 		});
 	}
 
-	_callJSONP(map['XL_WEATHER']);
+	grip();
 
 	ko.applyBindings(viewModel);
 })(); 

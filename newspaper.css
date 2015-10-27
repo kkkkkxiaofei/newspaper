@@ -367,3 +367,9 @@ img.lastad {
 .weather span {
     margin: 4px 4px 10px 0;
 }
+
+.background img {
+    float: right;
+    width: 172;
+    height: 120px;
+}
